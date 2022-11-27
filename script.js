@@ -19,6 +19,6 @@ async function displayWeather() {
   weather.textContent = weatherData.weather[0].main;
   weather.textContent += `, ${weatherData.main.temp} C`;
   let iconId = weatherData.weather[0].icon;
-  let iconUrl = await fetch(`http://openweathermap.org/img/w/${iconId}.png`);
+  let iconUrl = await fetch(`http://openweathermap.org/img/w/${iconId}.png`, {mode: 'cors'});
   icon.setAttribute("src", iconUrl.url);
 }
