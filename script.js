@@ -4,7 +4,7 @@ const myAppId = "fd0d5ce918d0195763177fe84d694955";
 const weather = document.getElementById("weather");
 let city;
 let weatherData;
-const iconDiv = document.getElementById("wicon");
+const icon = document.getElementById("wicon");
 
 async function customSubmit(event) {
   event.preventDefault();
@@ -21,5 +21,5 @@ async function displayWeather() {
   weather.textContent += `, Temperature: ${weatherData.main.temp} C`
   let iconId = weatherData.weather[0].icon;
   let iconUrl = await fetch(`http://openweathermap.org/img/w/${iconId}.png`);
-  iconDiv.setAttribute("src", iconUrl.url);
+  icon.setAttribute("src", iconUrl.url);
 }
